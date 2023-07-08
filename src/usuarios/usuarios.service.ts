@@ -5,7 +5,7 @@ import { Usuario } from './modelos/Usuario';
 import { CrearUsuarioDto } from './dto/crear-usuario-dto';
 import { AuthDto } from 'src/autenticacion/dto/auth-dto';
 
-var md5 = require('md5');
+
 @Injectable()
 export class UsuariosService {
   constructor(
@@ -19,7 +19,7 @@ export class UsuariosService {
       nombres: dto.nombres,
       apellidos: dto.apellidos,
       correo: dto.correo,
-      contrena: md5(dto.contrena),
+      contrena: dto.contrena,
       direccion: dto.direccion,
     });
   }
@@ -32,7 +32,7 @@ export class UsuariosService {
     const usuario = await this.usuarioModel.findOne({
       where: {
         correo: authDto.correo,
-        contrena: md5(authDto.contrasena),
+        contrena: authDto.contrena,
       },
     });
 
@@ -40,7 +40,6 @@ export class UsuariosService {
       throw new UnauthorizedException();
     }
     const payload = {
-      sub: usuario.nombres,
       correo: usuario.correo,
       rol: 'ADMIN',
     };

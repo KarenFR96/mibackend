@@ -1,4 +1,4 @@
 export class AuthDto {
   correo: string;
-  contrasena: string;
+  contrena: string;
 }
