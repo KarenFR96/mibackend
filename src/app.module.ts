@@ -4,10 +4,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { RolesModule } from './roles/roles.module';
 import { AutenticacionModule } from './autenticacion/autenticacion.module';
 import { InventarioModule } from './inventario/inventario.module';
-import { ListaClientesModule } from './lista_clientes/lista_clientes.module';
-import { OrdenesModule } from './ordenes/ordenes.module';
 import { ProductosModule } from './productos/productos.module';
-
 
 @Module({
   imports: [
@@ -25,8 +22,6 @@ import { ProductosModule } from './productos/productos.module';
     RolesModule,
     AutenticacionModule,
     InventarioModule,
-    ListaClientesModule,
-    OrdenesModule,
     ProductosModule,
   ],
 })

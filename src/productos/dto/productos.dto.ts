@@ -4,3 +4,5 @@ export class productosDto {
   descripcion: string;
   especificaciones_tecnicas: string;
 }
+
+
